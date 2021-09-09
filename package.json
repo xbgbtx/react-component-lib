@@ -36,9 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "terser-webpack-plugin": "^5.2.3",
-    "webpack": "^5.52.0"
   }
 }
