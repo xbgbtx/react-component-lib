@@ -1,10 +1,12 @@
 const path = require("path")
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const glob = require("glob")
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     entry: {
-        "bundle.js": glob.sync("build/static/?(js|css)/main.*.?(js|css)").map(f => path.resolve(__dirname, f)),
+        "bundle.js": 
+            glob.sync("build/static/?(js|css)/main.*.?(js|css)")
+                .map(f => path.resolve(__dirname, f)),
     },
     output: {
         filename: "build/static/js/bundle.min.js",
@@ -17,6 +19,9 @@ module.exports = {
             },
         ],
     },
-    plugins: [new UglifyJsPlugin()],
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+    },
 }
 

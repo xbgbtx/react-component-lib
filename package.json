@@ -37,8 +37,4 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack-cli": "^4.8.0"
-  }
 }
